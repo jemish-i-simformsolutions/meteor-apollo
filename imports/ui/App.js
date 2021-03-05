@@ -1,7 +1,11 @@
-import React from 'react'
+import React from "react";
+import SignupPage from "./Signup";
 
- const App=()=>{return(
- <>hello  aliens</>)
- ;
-}
- export default App;
+const App = () => {
+  return (
+    <>
+      <SignupPage />
+    </>
+  );
+};
+export default App;
