@@ -42,4 +42,3 @@ export const resolvers = {
     },
   },
 };
-console.log(UserCollection.find().fetch());

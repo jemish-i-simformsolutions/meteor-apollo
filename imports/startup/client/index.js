@@ -22,6 +22,7 @@ const Apollo = () => {
     </ApolloProvider>
   );
 };
+Meteor.subscribe("Donation");
 
 Meteor.startup(() => {
   render(<Apollo />, document.getElementById("app"));

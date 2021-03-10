@@ -1,0 +1,13 @@
+import React from "react";
+import { Donation } from "../../api/MeteorUserCollection";
+export const AllDonation = () => {
+  return (
+    <>
+      {Donation.find({})
+        .fetch()
+        .map((val, index) => {
+          return <li key={index}>{val.typeOfDonation}</li>;
+        })}
+    </>
+  );
+};
