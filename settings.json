@@ -1,0 +1,8 @@
+{
+  "galaxy.meteor.com": {
+    "env": {
+      "ROOT_URL": "http://loginpage.meteorapp.com/",
+      "MONGO_URL": "mongodb://<jemish.i@simformsolutions.com>:<Tw@1331j>@ds012345.mlab.com:12345/<db>"
+    }
+  }
+}

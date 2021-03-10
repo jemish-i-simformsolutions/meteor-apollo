@@ -14,6 +14,7 @@ const client = new ApolloClient({
   link: httplink,
   cache,
 });
+Meteor.subscribe("selectedPlayer");
 const Apollo = () => {
   return (
     <ApolloProvider client={client}>
