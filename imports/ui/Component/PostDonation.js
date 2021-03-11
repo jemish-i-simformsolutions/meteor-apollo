@@ -1,28 +1,43 @@
 import React, { useState } from "react";
 import { Meteor } from "meteor/meteor";
 import { Link } from "react-router-dom";
+import { addMutation } from "../Query/query";
+import { useMutation } from "@apollo/react-hooks";
 export const PostDonation = () => {
   const [typeofDonation, setTypeofDonation] = useState(null);
-  const [qauntityofDonation, setQauntityofDonation] = useState(null);
+  const [quantityofDonation, setQuantityofDonation] = useState(null);
   const [addressofDonation, setAddressofDonation] = useState(null);
   const [pincode, setPincode] = useState(null);
   const [contact, setContact] = useState(null);
+  const [addPost, { data }] = useMutation(addMutation);
+
   return (
     <>
       <h2>Post Donation here</h2>
       <form
         onSubmit={(event) => {
           event.preventDefault();
-          Meteor.call(
-            "addDonation",
-            typeofDonation,
-            addressofDonation,
-            qauntityofDonation,
-            pincode,
-            contact
-          );
+          // Meteor.call(
+          //   "addDonation",
+          //   typeofDonation,
+          //   addressofDonation,
+          //   qauntityofDonation,
+          //   pincode,
+          //   contact
+          // );
+          addPost({
+            variables: {
+              type: typeofDonation,
+              address: addressofDonation,
+              quantity: quantityofDonation,
+              pincode: pincode,
+              uid: Meteor.userId(),
+              contact: contact,
+            },
+          });
         }}
       >
+        {console.log(data)}
         <label>
           <input
             type="text"
@@ -51,7 +66,7 @@ export const PostDonation = () => {
           <input
             type="number"
             placeholder="Enter qauntity in KGs"
-            onChange={(event) => setQauntityofDonation(event.target.value)}
+            onChange={(event) => setQuantityofDonation(event.target.value)}
           />
         </label>
         <br />

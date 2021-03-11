@@ -34,6 +34,9 @@ Meteor.methods({
   removeDonation: (_id) => {
     Donation.remove({ _id: _id });
   },
+  getPersonalDonation: (uid = Meteor.userId()) => {
+    return Donation.find({ uid: uid }).fetch();
+  },
 });
 const schema = makeExecutableSchema({ typeDefs, resolvers });
 createApolloServer({ schema });
@@ -46,6 +49,5 @@ Meteor.startup(() => {
     secret: "UngisC2zzNppuF9TYFedawOD",
   });
 });
-console.log(Donation.find().fetch());
 
 //when there are multiple publish and and multiple subscription then there is merge occur among them

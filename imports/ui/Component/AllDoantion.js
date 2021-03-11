@@ -1,5 +1,8 @@
+import { gql } from "@apollo/client/core";
+import { useQuery } from "@apollo/react-hooks";
 import React from "react";
 import { Donation } from "../../api/MeteorUserCollection";
+
 export const AllDonation = () => {
   return (
     <>

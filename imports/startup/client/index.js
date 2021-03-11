@@ -16,13 +16,13 @@ const client = new ApolloClient({
 });
 Meteor.subscribe("selectedPlayer");
 const Apollo = () => {
+  Meteor.subscribe("Donation");
   return (
     <ApolloProvider client={client}>
       <App />
     </ApolloProvider>
   );
 };
-Meteor.subscribe("Donation");
 
 Meteor.startup(() => {
   render(<Apollo />, document.getElementById("app"));
