@@ -13,7 +13,7 @@ export const getAllDonation = gql`
     }
   }
 `;
-const findDonation = gql`
+export const findDonation = gql`
   query($uid: String!) {
     findDonation(uid: $uid) {
       type
@@ -34,6 +34,7 @@ export const getPersonalDonation = gql`
       pincode
       uid
       contact
+      _id
     }
   }
 `;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Meteor } from "meteor/meteor";
 import { Link } from "react-router-dom";
-import { addMutation } from "../Query/query";
+import { addMutation, getPersonalDonation } from "../Query/query";
 import { useMutation } from "@apollo/react-hooks";
 export const PostDonation = () => {
   const [typeofDonation, setTypeofDonation] = useState(null);
@@ -34,6 +34,12 @@ export const PostDonation = () => {
               uid: Meteor.userId(),
               contact: contact,
             },
+            refetchQueries: [
+              {
+                query: getPersonalDonation,
+                variables: { uid: Meteor.userId() },
+              },
+            ],
           });
         }}
       >

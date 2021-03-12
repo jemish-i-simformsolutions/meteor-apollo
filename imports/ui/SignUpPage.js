@@ -68,24 +68,6 @@ export const SignUpPage = () => {
           logout
         </button>
       )}
-      {/* <br />
-   
-
-      <br />
-      <h2>Login here</h2>
-     
-     
-      {flag === false ? "user not available" : "user available"}
-      <br />
-      <button
-        onClick={() => {
-          if (Meteor.userId() != null) {
-            Meteor.subscribe("successfull");
-          }
-        }}
-      >
-        click to subscribe
-      </button> */}
     </>
   );
 };

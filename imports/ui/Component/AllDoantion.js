@@ -9,7 +9,7 @@ export const AllDonation = () => {
       {Donation.find({})
         .fetch()
         .map((val, index) => {
-          return <li key={index}>{val.typeOfDonation}</li>;
+          return <li key={index}>{val.type}</li>;
         })}
     </>
   );
