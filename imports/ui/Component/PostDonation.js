@@ -45,11 +45,23 @@ export const PostDonation = () => {
       >
         {console.log(data)}
         <label>
-          <input
+          {/* <input
             type="text"
             placeholder="Type of Donation"
             onChange={(event) => setTypeofDonation(event.target.value)}
-          />
+          /> */}
+          <select
+            name="type"
+            id="cars"
+            onChange={(event) => setTypeofDonation(event.target.value)}
+          >
+            <option value="None">None</option>
+            <option value="Financial">Financial</option>
+            <option value="Food">Food</option>
+            <option value="Blood">Blood</option>
+            <option value="Clothes">Clothes</option>
+            <option value="Others">Others</option>
+          </select>
         </label>
         <br />
         <label>

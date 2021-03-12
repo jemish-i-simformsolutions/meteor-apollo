@@ -18,7 +18,7 @@ const LoginPage = () => {
               loginStyle: "popup",
               redirectUrl: "https://localhost:3000/_oauth/google?close",
             });
-            setFlag(true);
+            Meteor.userId() !== null ? setFlag(true) : "";
           }}
         >
           Login with <GoogleOutlined />

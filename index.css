@@ -1,0 +1,32 @@
+#donationPost {
+  width: fit-content;
+  background-color: bisque;
+  border: 3px solid gray;
+  padding: 2%;
+  border-radius: 3%;
+  display: inline-block;
+}
+#donation_list {
+  display: flex;
+  padding: 1%;
+}
+#subComponent {
+  margin-left: 15px;
+}
+.app {
+  display: flex;
+}
+.navbar {
+  height: max-content;
+  border-right: 2px solid gray;
+  height: 100vh;
+  width: 150px;
+  display: list-item;
+  padding-inline: 1%;
+}
+.container {
+  margin-left: 20px;
+}
+Link {
+  font-size: 30px;
+}
