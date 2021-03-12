@@ -11,7 +11,6 @@ export const PersonalDonation = () => {
 
   return (
     <>
-      {console.log(data)}
       {loading === false
         ? data.getPersonalDonation.map((val, index) => {
             return (
