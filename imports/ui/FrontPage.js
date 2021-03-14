@@ -7,28 +7,35 @@ import { PostDonation } from "./Component/PostDonation";
 import LoginPage from "./LoginPage";
 import Player from "./Player";
 import { SignUpPage } from "./SignUpPage";
+import Navbar from "./Component/Navbar";
+import { Provider } from "react-redux";
+import { ConfigureStore } from "./Redux/ConfigureStore";
 const FrontPage = () => {
+  const store = ConfigureStore();
   return (
     <>
       <BrowserRouter>
         <div className="app">
           <div className="navbar">
-            <Link to="/signup">Signup</Link>
-            <br />
-            <Link to="/login">Login here</Link>
-            {/* <br />
-        <Link to="/player">Player</Link> */}
-            <br />
-            <Link to="/post_donation">Doante here</Link>
-            <br />
-            <Link to="/find_donation">Find Donation</Link>
+            <Provider store={store}>
+              <Navbar />
+            </Provider>
           </div>
 
           <Switch>
             {/* <Route path="/login"/> */}
             <div className="container">
-              <Route path="/signup" component={SignUpPage} />
-              <Route path="/login" component={LoginPage} />
+              <Route path="/signup">
+                <Provider store={store}>
+                  <SignUpPage />
+                </Provider>
+              </Route>
+              <Route path="/login">
+                <Provider store={store}>
+                  <LoginPage />
+                </Provider>
+              </Route>
+
               <Route path="/player" component={Player} />
               <Route path="/post_donation" component={PostDonation} />
               <Route path="/personal_donations" component={PersonalDonation} />

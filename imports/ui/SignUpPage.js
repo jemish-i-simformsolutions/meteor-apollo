@@ -3,6 +3,7 @@ import { Meteor } from "meteor/meteor";
 import { Accounts } from "meteor/accounts-base";
 import { useTracker } from "meteor/react-meteor-data";
 import { BrowserRouter, NavLink, Router } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 export const SignUpPage = () => {
   const [mail, setMail] = useState(null);
@@ -10,6 +11,7 @@ export const SignUpPage = () => {
   const [flag, setFlag] = useState(false);
   const [loginmail, setLoginmail] = useState(null);
   const [loginpassword, setLoginpassword] = useState(null);
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -25,6 +27,7 @@ export const SignUpPage = () => {
                 email: mail,
                 password: password,
               },
+              () => dispatch({ type: "LOGINSUCCESSFULL", data: true }),
               (err) => console.log(err)
             );
             setFlag(true);

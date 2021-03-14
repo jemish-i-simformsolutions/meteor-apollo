@@ -13,7 +13,7 @@ import { deletePost, getPersonalDonation } from "../Query/query";
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
+    maxWidth: 250,
   },
 });
 
