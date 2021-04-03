@@ -9,30 +9,11 @@ const LoginPage = () => {
   const dispatch = useDispatch();
   const signal = useSelector((state) => state.status1);
   return (
-    <>
-      <br />
-      <br />
+    <div className="d-flex align-items-center justify-content-center mt-5">
       {signal === false ? (
-        <>
-          <button
-            onClick={() => {
-              Meteor.loginWithGoogle(
-                {
-                  requestPermissions: ["email"],
-                  loginStyle: "popup",
-                  redirectUrl: "https://localhost:3000/_oauth/google?close",
-                },
-                () =>
-                  dispatch({ type: "LOGINSUCCESSFULL", data: true }, () =>
-                    setFlag(true)
-                  )
-              );
-            }}
-          >
-            Login with <GoogleOutlined />
-          </button>
+        <div>
           <form
-            className="loginform"
+            className="form card p-2  "
             onSubmit={(event) => {
               event.preventDefault();
               Meteor.loginWithPassword(
@@ -45,19 +26,53 @@ const LoginPage = () => {
               setFlag(true);
             }}
           >
+            <button
+              className="form-control bg-primary"
+              onClick={() => {
+                Meteor.loginWithGoogle(
+                  {
+                    requestPermissions: ["email"],
+                    loginStyle: "popup",
+                    redirectUrl: "https://localhost:3000/_oauth/google?close",
+                  },
+                  () =>
+                    dispatch({ type: "LOGINSUCCESSFULL", data: true }, () =>
+                      setFlag(true)
+                    )
+                );
+              }}
+            >
+              <GoogleOutlined className="text-warning col-1  " />
+              <span className="col-2 text-danger font-weight-bold">
+                Login with Google!
+              </span>
+            </button>
+            <br />
+
             <input
-              type="text"
-              placeholder="email"
+              type="email"
+              className="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
               onChange={(event) => setLoginmail(event.target.value)}
             />
             <br />
             <input
-              type="text"
-              placeholder="password"
+              type="password"
+              className="form-control"
+              placeholder="Enter password"
               onChange={(event) => setLoginpassword(event.target.value)}
             />
             <br />
-            <input type="submit" />
+            <center>
+              {" "}
+              <input
+                type="submit"
+                value="Login"
+                className="  btn  btn-outline-success text-success font-weight-bolder bg-white"
+              />
+            </center>
             <br />
 
             {/* <BrowserRouter>         <NavLink to="/_oauth/google">click here to login with google</NavLink>
@@ -65,11 +80,12 @@ const LoginPage = () => {
        
           </BrowserRouter> */}
           </form>
-        </>
+        </div>
       ) : (
         <>
           "already login"
           <button
+            className="btn btn-sm btn-outline-primary bg-white"
             onClick={() => {
               Meteor.logout(() =>
                 dispatch({ type: "LOGINISNOTSUCCESSFULL", data: false }, () =>
@@ -84,14 +100,7 @@ const LoginPage = () => {
       )}
       <br />
       <br />
-      <button
-        onClick={() => {
-          console.log(Meteor.users.find().fetch());
-        }}
-      >
-        click to show current user
-      </button>
-    </>
+    </div>
   );
 };
 export default LoginPage;

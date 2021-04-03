@@ -10,10 +10,11 @@ import { SignUpPage } from "./SignUpPage";
 import Navbar from "./Component/Navbar";
 import { Provider } from "react-redux";
 import { ConfigureStore } from "./Redux/ConfigureStore";
+import "./../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 const FrontPage = () => {
   const store = ConfigureStore();
   return (
-    <>
+    <div>
       <BrowserRouter>
         <div className="app">
           <div className="navbar">
@@ -39,13 +40,15 @@ const FrontPage = () => {
               <Route path="/player" component={Player} />
               <Route path="/post_donation" component={PostDonation} />
               <Route path="/personal_donations" component={PersonalDonation} />
+
               <Route path="/all_donations" component={AllDonation} />
+
               <Route path="/find_donation" component={FindDonation} />
             </div>
           </Switch>
         </div>
       </BrowserRouter>
-    </>
+    </div>
   );
 };
 export default FrontPage;
