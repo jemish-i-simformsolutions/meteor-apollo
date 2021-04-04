@@ -14,9 +14,9 @@ export const SignUpPage = () => {
   const dispatch = useDispatch();
 
   return (
-    <>
+    <div>
       {/* {Meteor.subscribe()} */}
-      <h2>Register here</h2>
+      <h2 className="text-white">Register here</h2>
       <form
         className="form2"
         onSubmit={(event) => {
@@ -60,7 +60,7 @@ export const SignUpPage = () => {
         </label>
       </form>
       {flag === false ? (
-        "login please"
+        <h5 className="text-white"> Register please</h5>
       ) : (
         <button
           onClick={() => {
@@ -71,7 +71,7 @@ export const SignUpPage = () => {
           logout
         </button>
       )}
-    </>
+    </div>
   );
 };
 //697818373172-mrsqqiracemiqu21i3ka4q4delnkbds7.apps.googleusercontent.com

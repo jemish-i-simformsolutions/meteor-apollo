@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { GoogleOutlined } from "@ant-design/icons";
+import { GoogleOutlined, CheckCircleOutlined } from "@ant-design/icons";
 import { useDispatch, useSelector } from "react-redux";
 const LoginPage = () => {
   const [flag, setFlag] = useState(Meteor.userId() === null ? false : true);
@@ -83,7 +83,9 @@ const LoginPage = () => {
         </div>
       ) : (
         <>
-          "already login"
+          <h6 className="text-white"> Already login</h6>
+          <CheckCircleOutlined style={{ color: "white" }} />
+          <br />
           <button
             className="btn btn-sm btn-outline-primary bg-white"
             onClick={() => {

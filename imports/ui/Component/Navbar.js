@@ -6,6 +6,9 @@ import Divider from "@material-ui/core/Divider";
 import { Link } from "react-router-dom";
 import { Meteor } from "meteor/meteor";
 import { connect } from "react-redux";
+import { Avatar, makeStyles } from "@material-ui/core";
+// import { Avatar, Image } from "antd";
+// import { UserOutlined } from "@ant-design/icons";
 
 function ListItemLink(props) {
   return <ListItem button component="a" {...props} />;
@@ -23,34 +26,41 @@ class Navbar extends React.Component {
   render() {
     return (
       <div className="justify justify-content-left   ">
-        <List aria-label="main mailbox folders">
-          <ListItem button>
-            <ListItemIcon>
-              <Link
-                to="/signup"
-                className="btn btn-outline-primary text-white btn-sm   font-weight-bold"
-                data-toggle="button"
-                aria-pressed="false"
-                autocomplete="off"
-              >
-                Sign Up
-              </Link>
-            </ListItemIcon>
-          </ListItem>
-          <ListItem button>
-            <ListItemIcon>
-              <Link
-                to="/login"
-                className="btn btn-outline-primary text-white btn-sm  font-weight-bold"
-                data-toggle="button"
-                aria-pressed="false"
-                autocomplete="off"
-              >
-                Login here
-              </Link>
-            </ListItemIcon>
-          </ListItem>
-        </List>
+        {this.props.status1 === true ? (
+          <Avatar alt="Remy Sharp">J</Avatar>
+        ) : (
+          <>
+            <List aria-label="main mailbox folders">
+              <ListItem button>
+                <ListItemIcon>
+                  <Link
+                    to="/signup"
+                    className="btn btn-outline-primary text-white btn-sm   font-weight-bold"
+                    data-toggle="button"
+                    aria-pressed="false"
+                    autocomplete="off"
+                  >
+                    Sign Up
+                  </Link>
+                </ListItemIcon>
+              </ListItem>
+              <ListItem button>
+                <ListItemIcon>
+                  <Link
+                    to="/login"
+                    className="btn btn-outline-primary text-white btn-sm  font-weight-bold"
+                    data-toggle="button"
+                    aria-pressed="false"
+                    autocomplete="off"
+                  >
+                    Login here
+                  </Link>
+                </ListItemIcon>
+              </ListItem>
+            </List>
+          </>
+        )}
+
         {this.props.status1 === true ? (
           <List component="nav" aria-label="secondary mailbox folders">
             <ListItem button>

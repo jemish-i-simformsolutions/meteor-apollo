@@ -3,6 +3,7 @@ import { useQuery } from "@apollo/react-hooks";
 import React from "react";
 import { Donation } from "../../api/MeteorUserCollection";
 import GlobalPostComponent from "./GlobalPostComponent";
+import QueueAnim from "rc-queue-anim";
 
 export const AllDonation = () => {
   return (
