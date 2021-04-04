@@ -20,7 +20,7 @@ export default function GlobalPostComponent(props) {
   const classes = useStyles();
 
   return (
-    <QueueAnim delay={1000}>
+    <QueueAnim delay={200}>
       <Card className={classes.root} key="a">
         <CardActionArea>
           <QueueAnim delay={1500}>

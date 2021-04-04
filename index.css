@@ -31,11 +31,11 @@
 }
 .app {
   display: flex;
-  background-color: black;
+  background-color: rgb(17, 16, 16);
   background-size: cover;
-  background-repeat: no-repeat;
   height: 250vh;
 }
-.body {
-  background-color: "black";
+.table {
+  border-collapse: separate;
+  border-spacing: 0 20px;
 }

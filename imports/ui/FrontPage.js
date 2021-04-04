@@ -37,7 +37,6 @@ const FrontPage = () => {
                 </Provider>
               </Route>
 
-              <Route path="/player" component={Player} />
               <Route path="/post_donation" component={PostDonation} />
               <Route path="/personal_donations" component={PersonalDonation} />
 

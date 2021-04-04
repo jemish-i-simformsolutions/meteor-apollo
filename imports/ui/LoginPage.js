@@ -86,18 +86,6 @@ const LoginPage = () => {
           <h6 className="text-white"> Already login</h6>
           <CheckCircleOutlined style={{ color: "white" }} />
           <br />
-          <button
-            className="btn btn-sm btn-outline-primary bg-white"
-            onClick={() => {
-              Meteor.logout(() =>
-                dispatch({ type: "LOGINISNOTSUCCESSFULL", data: false }, () =>
-                  setFlag(false)
-                )
-              );
-            }}
-          >
-            Log out
-          </button>
         </>
       )}
       <br />
