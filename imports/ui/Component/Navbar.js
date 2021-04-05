@@ -73,7 +73,7 @@ function Navbar() {
   const classes = useStyles();
 
   return (
-    <>
+    <div>
       {status1 === true ? (
         <List aria-label="main mailbox folders">
           <ListItem button>
@@ -151,6 +151,7 @@ function Navbar() {
                 </Link>
               </tr>
               <tr>
+                {" "}
                 <Link
                   to="personal_donations"
                   className="btn btn-outline-danger btn-sm text-white   "
@@ -161,7 +162,7 @@ function Navbar() {
               <tr>
                 <Link
                   to="all_donations"
-                  className="btn btn-outline-danger btn-sm  text-white  "
+                  className="btn btn-outline-danger btn-sm  text-white display-4  "
                 >
                   All Donations
                 </Link>
@@ -187,7 +188,7 @@ function Navbar() {
       ) : (
         <span className="text-danger fade-in"> Please Login!</span>
       )}
-    </>
+    </div>
   );
 }
 export default Navbar;
